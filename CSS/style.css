@@ -1,0 +1,326 @@
+*{
+    margin: 0;
+}
+:root{
+    --fontBase: 'Inter', sans-serif;
+
+    /* ---- Primary Colors ----*/
+    --LimeGreen: hsl(163, 72%, 41%);
+    --BrightRed: hsl(356, 69%, 56%);
+    --Facebook: hsl(208, 92%, 53%);
+    --Twitter: hsl(203, 89%, 53%);
+    --Instagram: linear-gradient(90deg,hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+    --YouTube: hsl(348, 97%, 39%);
+
+    /* ---- Dark Theme Colors ----*/
+    --ToggleDark: linear-gradient(90deg,hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+    --VerDarkBlueBG:  hsl(225, 17%, 14%);
+    --VerDarkBlueTop: hsl(232, 19%, 15%);
+    --DarkDesaturatedBlue: hsl(228, 28%, 20%);
+    --DesaturatedBlueText: hsl(228, 34%, 66%);
+    --WhiteText: hsl(0, 0%, 100%);
+
+    /* ---- Light Theme Colors ----*/
+    --Toggle: hsl(230, 22%, 74%);
+    --WhiteBG: hsl(0, 0%, 100%);
+    --VeryPaleBlueTop: hsl(225, 100%, 98%);
+    --LightGrayishBlueCard: hsl(227, 47%, 96%);
+    --DarkGrayishBlueText: hsl(228, 12%, 44%);
+    --VeryDarkBlueText: hsl(230, 17%, 14%);
+}
+
+body{
+    position: relative;
+    font-family: var(--fontBase);
+    background-color: var(--WhiteBG);
+}
+body::before{
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 200px;
+    background: var(--VeryPaleBlueTop);
+    z-index: -1;
+    border-radius: 0 0 20px 20px;
+}
+h5{
+    color: var(--DarkGrayishBlueText);
+}
+.social-media-dashboard-title h1{
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+.social-media{
+    margin: auto;
+    min-block-size: 100vh;
+    padding-inline-end: 16px;
+    padding-inline-start: 16px;
+    max-inline-size: 1158px;
+}
+/* DASHBOARD */
+.social-media-dashboard{
+    padding: 30px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 15px;
+}
+.social-media-dashboard-title{
+    border-bottom: 1px solid var(--DarkDesaturatedBlue);
+    padding-bottom: 15px;
+}
+.toggle{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: space-between;
+    width: 100%;
+}
+.social-media-dashboard-toggle{
+    display: flex;
+    align-items: center;
+}
+
+/* FIRST CONTAINER OF CARDS*/ 
+.info-social-media{
+    display: grid;
+    gap: 15px;
+}
+
+/* OVERVIEW TODAY STYLES */
+.overview-Today{
+    padding: 30px 0;
+    color: var(--DarkGrayishBlueText);
+}
+.info-social-media-today{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+/* STYLE OF THE FIRST CARDS */
+.info-social-media-card{
+    background-color: var(--LightGrayishBlueCard);
+    text-align: center;
+    padding: 20px 0;
+    border-radius: 5px;
+}
+.count-followers{
+    margin: 20px 0;
+}
+.count-followers h1{
+    font-weight: bold;
+    font-size: 3em;
+}
+.count-followers p{
+    letter-spacing: 5px;
+    color: var(--DarkGrayishBlueText);
+}
+.info-social-media-card:hover{
+    background: #e4e4f4;
+    cursor: pointer;
+}
+.social-network{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 0.75em;
+    font-weight: bold;
+    color: var(--DarkGrayishBlueText);
+}
+#facebook{
+    border-top: 4px solid var(--Facebook);
+}
+#twitter{
+    border-top: 4px solid var(--Twitter);
+}
+#instagram{
+    background-repeat: no-repeat;
+    background-image: var(--Instagram);
+    background-size: 100% 4px;
+}
+#youtube{
+    border-top: 4px solid var(--YouTube);
+}
+
+/* STYLES OF THE SECOND CARDS*/
+.info-social-media-today-card{
+    background-color: var(--LightGrayishBlueCard);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    border-radius: 5px;
+}
+.info-social-media-today-card:hover{
+    background:  #e4e4f4;
+    cursor: pointer;
+}
+.info-social-media-today-card .count{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    height: 100%;
+    gap: 20px;
+}
+.info-social-media-today-card .count p{
+    font-size: 0.8em;
+    font-weight: bold;
+    color: var(--DarkGrayishBlueText);
+}
+.info-social-media-today-card .count h3{
+    font-size: 1.5em;
+}
+.info-social-media-today-card .today{
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    height: 100%;
+    gap: 30px;
+}
+.info-social-media-today-card .today div{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    align-items: baseline;
+    font-size: 0.75em;
+}
+.info-social-media-card .down, .info-social-media-card .up{
+    display: flex;
+    flex-direction: row;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.75em;
+}
+
+/* GENERAL OF COUNT DOWN AND COUNT UP */
+.down{
+    color: var(--BrightRed);
+    font-weight: bold;
+}
+.up{
+    font-weight: bold;
+    color: var(--LimeGreen);
+}
+
+/* LIGHT MODE OF TOGGLE*/
+input[type="checkbox"]{
+    position: relative;
+    appearance: none;
+    width: 40px;
+    height: 20px;
+    background: var(--Toggle);
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+}
+input[type="checkbox"]::before{
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 20px;
+    background: var(--LightGrayishBlueCard);
+    left: 20px;
+    transition: .5s;
+}
+
+/* DARK MODE OF TOGGLE */
+.active input[type="checkbox"]{
+    background: var(--ToggleDark);
+}
+.active input[type="checkbox"]::before{
+    background: var(--DarkDesaturatedBlue);
+    left: 5px;
+    transition: .5s;
+}
+
+/* DARK MODE */
+body.dark{
+    background: var(--VerDarkBlueBG);
+    color: var(--WhiteText);
+}
+body.dark::before{
+    background: var(--VerDarkBlueTop);
+    box-shadow: 0px 12px 12px -7px rgba(0,0,0,0.07);
+    -webkit-box-shadow: 0px 12px 12px -7px rgba(0,0,0,0.07);
+    -moz-box-shadow: 0px 12px 12px -7px rgba(0,0,0,0.07);
+}
+body.dark .social-media-dashboard-title{
+    border-color: var(--DesaturatedBlueText);
+}
+body.dark .info-social-media-card{
+    background: var(--DarkDesaturatedBlue);
+}
+body.dark .social-network , body.dark .count-followers p{
+    color: var(--DesaturatedBlueText);
+}
+body.dark .info-social-media-today-card{
+    background: var(--DarkDesaturatedBlue);
+    color: var(--DesaturatedBlueText);
+}
+body.dark .count p{
+    color: var(--DesaturatedBlueText);
+}
+body.dark .info-social-media-today-card h3{
+    color: var(--WhiteText);
+}
+body.dark .info-social-media-card:hover{
+    background:#343c54;
+}
+body.dark .info-social-media-today-card:hover{
+    background:#343c54;
+}
+body.dark h5{
+    color: var(--DesaturatedBlueText);
+}
+body.dark .overview-Today{
+    color: var(--WhiteText);
+}
+body.dark h1{
+    color: var(--WhiteText);
+}
+
+/* RESPONSIVE */
+@media screen and (min-width: 480px){
+    .social-media-dashboard{
+        flex-direction: row;
+        gap: 0;
+    }
+    .info-social-media{
+        grid-template-columns: 1fr 1fr;
+    }
+    .info-social-media-today{
+        grid-template-columns: 1fr 1fr;
+    }
+    .social-media-dashboard-title{
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+}
+@media screen and (min-width: 768px){
+    .info-social-media{
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 30px;
+    }
+    .info-social-media-today{
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 30px;
+    }
+    .info-social-media-today-card{
+        padding: 30px;
+    }
+}
+@media screen and (min-width: 1024px){
+    .info-social-media{
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .info-social-media-today{
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
